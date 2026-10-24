@@ -1,0 +1,14 @@
+M:\الفلاشة\hidden File\Tawjeh\SprintOne\JobApplicationTracker\obj\Debug\net10.0\JobApplicationTracker.GeneratedMSBuildEditorConfig.editorconfig
+M:\الفلاشة\hidden File\Tawjeh\SprintOne\JobApplicationTracker\obj\Debug\net10.0\JobApplicationTracker.AssemblyInfoInputs.cache
+M:\الفلاشة\hidden File\Tawjeh\SprintOne\JobApplicationTracker\obj\Debug\net10.0\JobApplicationTracker.AssemblyInfo.cs
+M:\الفلاشة\hidden File\Tawjeh\SprintOne\JobApplicationTracker\obj\Debug\net10.0\JobApplicationTracker.csproj.CoreCompileInputs.cache
+M:\الفلاشة\hidden File\Tawjeh\SprintOne\JobApplicationTracker\bin\Debug\net10.0\JobApplicationTracker.exe
+M:\الفلاشة\hidden File\Tawjeh\SprintOne\JobApplicationTracker\bin\Debug\net10.0\JobApplicationTracker.deps.json
+M:\الفلاشة\hidden File\Tawjeh\SprintOne\JobApplicationTracker\bin\Debug\net10.0\JobApplicationTracker.runtimeconfig.json
+M:\الفلاشة\hidden File\Tawjeh\SprintOne\JobApplicationTracker\bin\Debug\net10.0\JobApplicationTracker.dll
+M:\الفلاشة\hidden File\Tawjeh\SprintOne\JobApplicationTracker\bin\Debug\net10.0\JobApplicationTracker.pdb
+M:\الفلاشة\hidden File\Tawjeh\SprintOne\JobApplicationTracker\obj\Debug\net10.0\JobApplicationTracker.dll
+M:\الفلاشة\hidden File\Tawjeh\SprintOne\JobApplicationTracker\obj\Debug\net10.0\refint\JobApplicationTracker.dll
+M:\الفلاشة\hidden File\Tawjeh\SprintOne\JobApplicationTracker\obj\Debug\net10.0\JobApplicationTracker.pdb
+M:\الفلاشة\hidden File\Tawjeh\SprintOne\JobApplicationTracker\obj\Debug\net10.0\JobApplicationTracker.genruntimeconfig.cache
+M:\الفلاشة\hidden File\Tawjeh\SprintOne\JobApplicationTracker\obj\Debug\net10.0\ref\JobApplicationTracker.dll
