@@ -6,12 +6,12 @@ namespace JobApplicationTracker.Practice
 {
     internal class CollectionsPractice
     {
-        private void PracticeInsideAMethod()
+        private void ListPracticeNotes()
         {
             /*
              * Notes figured out on my own:
              *      1. var doesn't work outside a function, aka every class element must be explicitly determined.
-             *      2. searched for copy types (shallow copy and deep copy)
+             *      2. searched for copy types (shallow copy and deep copy) - almost all functions shallow copy data. (json serialization is deep copy)
              *      3. watched more videos regarding the list
                 => Practice List<T>:
                     - adjustable on its own, shrinks and expands
@@ -88,6 +88,66 @@ namespace JobApplicationTracker.Practice
             //Update
             countryList[2] = "China";
         }
-        
+        private void DictionaryPracticeNotes()
+        {
+            /*
+             
+            - Dictionary: generic storage for <key, value> pairs a list of them.
+            - key must be unique, no duplicate keys, can not null
+            - types must e identified and maintained throughout the code
+            - capacity of the dictionary is the number of pairs it can hold.
+             */
+
+            // Declaration and Add and Access 
+            Dictionary<string, string> capitals = new Dictionary<string, string>();
+            Dictionary<int, string> employees = new Dictionary<int, string>()
+            {
+                {10, "Hanaa" },
+                {23, "Samir" },
+                {22, "Amira" }
+            };
+            var exchangeRate = new Dictionary<string, float>()
+            {
+                ["USD"] = 56.23f,
+                ["EUR"] = 34.54f
+            };
+            foreach (var employee in employees)
+            {
+                Console.WriteLine($"{employee.Value}");
+            }
+            Console.WriteLine("===============================");
+            capitals.Add("Egypt", "Cairo");
+            capitals.Add("Germany", "Berlin");
+
+            var newCapitals = new Dictionary<string, string>(capitals);
+            var newEmployees = employees.ToDictionary(e => e.Key, e => e.Value);
+
+
+            // Search and Update
+            int index = Array.IndexOf(capitals.Keys.ToArray(), "Egypt");
+            capitals["Egypt"] = "Al-Qaherah"; // can only be accessed by the key.. if ask by value gives error
+            // if key doesn't exist = error (duh) => use tryGetKey()
+            Console.WriteLine(capitals.TryGetValue("USA", out string? newCountry));
+            // or check if key or value exists ContainsKey, ContainsValue : true or false
+            Console.WriteLine(capitals.ContainsKey("USA"));
+
+            // Remove and Clear
+            employees.Remove(22); // key
+            exchangeRate.Clear(); // delete all keys and values
+
+            // Sort
+            var sortedEmployees = employees.OrderBy(e => e.Key);
+             // or OrderByDescending();
+
+            //convert to string
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (var capital in capitals)
+            {
+                stringBuilder.Append($"{capital.Key}: {capital.Value}\n");
+            }
+            string finalString = stringBuilder.ToString();
+
+            Console.WriteLine(finalString);
+        }
     }
 }
