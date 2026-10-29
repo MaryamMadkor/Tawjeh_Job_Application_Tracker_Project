@@ -1,4 +1,24 @@
-﻿using System;
+﻿/*
+ =========================== Executive Summary ===========================
+ Collections in C# are different ways to store certain data in different situations and accordingly different features and functionalities for each
+    1. List<T>: Resizable | Dynamic | uses Index | orderd but not sorted untill on demand => Flexable and easy for large changing datasets
+    2. Dictionary<T>: Key-Value | Unique only items | None Null items | indexed and accessed by keys | can be ordered
+    3. Stack<T>: LIFO | No sorting or updating | no uniqueness | good for parsing and function frame calls and similar functionalities
+    4. Queue<T>: FIFO | No sorting or updating | No uniqueness | good for process scheduling and networking
+    5. HashSet<T>: unordered | unique only | hash-based fast easy access and lookups | good for spam filters and spell checkers | union, intersect, except.
+
+ =========================== When To Choose What ===========================
+ - Need indexes, iteration, sorting, resizable data? List<T>
+ - Need Fast lookups, unique identifier
+? Dictionary<T>
+ - Need LIFO behavior (backtracking, parsing...)? Stack<T>
+ - Need FIFO behavior (scheduling, printing, buffering..)? Queue<T>
+ - Need Fast membership tests and set algebra (intersect, union..)? HashSet<T>
+ 
+ */
+
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
