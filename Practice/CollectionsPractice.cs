@@ -149,5 +149,64 @@ namespace JobApplicationTracker.Practice
 
             Console.WriteLine(finalString);
         }
+        
+        private void StackPracticeNotes()
+        {
+            /*
+            - Last In, First Out (LIFO) system
+                - push() to top.
+                - pop() retrieve and remove first on top. 
+                - peek() retrieve top item but keep it.
+            - USES: 
+                - Parsing string.
+                - Reverse string.
+                - Functions calls.
+                - Backtracking. (BACKTRACKING)
+            - doesn't accept nulls if  not nullable.
+            - accepts Duplicates.
+             */
+
+            // Decalre, Add and Access
+            Stack<int> stack = new Stack<int>();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
+            Console.WriteLine(stack.Count); // count is 4
+
+            //update: not possible logaically
+
+            //remove
+            Console.WriteLine(stack.Pop()); //top number before removing it is 4
+
+            // sorting : also not possible logically.
+
+            // merits are about the priority and the final state of something is saved in an efficient manner.
+        }
+
+        private void QueuePracticeNotes()
+        {
+            /*
+            - First In, First Out (FIFO)
+            - USES:
+                - tasks done in order of assignment or request (process scheduling)
+                - File processing (printing or sharing)
+                - Networking 
+                - Simulation
+            - Enqueue() add element
+            - Dequeue() retrieve and remove first added item
+            - Peek() retrieve  and keep first added item
+             */
+
+            // declare add access remove
+            Queue<int> queue = new Queue<int>();
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+            queue.Dequeue();
+            queue.Peek();
+
+            // sorting and updating is not possible. at least not the traditional way.
+        }
     }
 }
