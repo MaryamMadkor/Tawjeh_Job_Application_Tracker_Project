@@ -208,5 +208,49 @@ namespace JobApplicationTracker.Practice
 
             // sorting and updating is not possible. at least not the traditional way.
         }
+        private void HashSetPracticeNotes()
+        {
+            /*
+            - Not Ordered
+            - Unique items only
+            - Hash-based collection, ie. use hash function to map elements to a unique index = fast and easy access (lookup)
+            - USES: 
+                - Spam Filter: store list of spam words
+                - Password manager: store unique passwords
+                - Recommendation engine: store list of items has interacted with to help them recommend relevant data
+                - Spell checker
+            - when dealing with classes and objects: you must inherit and implement IEquitable interface in the class to maintain the uniqueness functionality
+             */
+
+            // declare add access
+            HashSet<int> set = new HashSet<int>();
+            set.Add(1);
+            set.Add(2);
+            set.Add(3);
+            set.Add(2); // no error but doesn't add it at all as a new item.
+            set.TryGetValue(4, out int outone);
+
+            // remove
+            set.Remove(1);
+
+
+            // convert (or copy) from array.
+            string[] array = new string[] { "hello", "Apple", "hello"};
+            var hashset = new HashSet<string>(array);// count is only 2 even if array count is 3
+            var hashset2 = new HashSet<string>() { "Cat", "Apple" };
+            // is subset of
+            Console.WriteLine(hashset.IsSubsetOf(hashset2));// false
+
+            // union
+            var union = hashset.Union(hashset2);// makes a new hashset with the data of both
+            hashset.UnionWith(hashset2); // adds hashset2 to hashset without making a new hashset
+
+            //difference 
+            Console.WriteLine(hashset.Except(hashset2)); // show difference between two hashsets only
+
+            //intersect
+            Console.WriteLine(hashset2.Intersect(hashset)); // show intersecting items
+
+        }
     }
 }
