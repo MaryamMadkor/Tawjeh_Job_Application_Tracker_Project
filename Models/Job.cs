@@ -7,9 +7,9 @@ using System.Xml;
 
 namespace JobApplicationTracker.Models
 {
-    internal class Job
+    internal class Job : IEntity
     { 
-        UniqueId id = new UniqueId();
+        public int Id { get; set; }
         [Required]
         public string Title { get; set; } = "Not Specified.";
         public string Description { get; set; } = "Not Specified.";

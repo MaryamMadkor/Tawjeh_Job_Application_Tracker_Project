@@ -7,9 +7,9 @@ using System.Xml;
 
 namespace JobApplicationTracker.Models
 {
-    internal class Candidate
+    internal class Candidate : IEntity
     {
-        public UniqueId id = new UniqueId();
+        public int Id { get; set; }
         [Required] 
         public string FullName { get; set; } = "Not Specified.";
         public string Email { get; set; } = "Not Specified.";
@@ -20,12 +20,7 @@ namespace JobApplicationTracker.Models
         {
             if (fullName == null) throw new ArgumentNullException("Name is required. Please insert a valid full name.");
             if (yearsOfExperience < 0) throw new ArgumentException("Years of Experience is not a valid number.");
-            if (Regex.IsMatch(Constants.emailPattern, email))
-                Email = email;
-            else
-            {
-                throw new ArgumentException("The Email Provided Is Not In a Valid Email Format: ", nameof(Email));
-            }
+            Email = email;
             FullName = fullName;
             Email = email;
             Phone = phone;

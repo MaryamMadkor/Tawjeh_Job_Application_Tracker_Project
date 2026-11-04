@@ -8,9 +8,9 @@ using System.Xml;
 
 namespace JobApplicationTracker.Models
 {
-    internal class Recruiter
+    internal class Recruiter: IEntity
     {
-        public UniqueId id { get; } = new UniqueId();
+        public int Id { get; set; }
         [Required] 
         public string Name { get; set; } = "Not Specified"; // would be handled in logic to ensure user inputs it.
         public string Email { get; set; } = "Not Specified";

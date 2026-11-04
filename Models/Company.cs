@@ -6,21 +6,20 @@ using System.Xml;
 
 namespace JobApplicationTracker.Models
 {
-    internal class Company
+    internal class Company : IEntity
     {
-        public UniqueId Id { get; } = new UniqueId();
+        public int Id { get; set; }
         [Required] public string Name { get; set; } = "Not Spacified";
         public string Industry { get; set; } = "Not Specified";
         public string City { get; set; } = "Not Specified";
         public CompanyStatus Status { get; set; } = CompanyStatus.Pending;
 
-        public Company(string name, string industry, string city, CompanyStatus status)
+        public Company(string name, string industry, string city)
         {
             if(name  == null) throw new ArgumentNullException("Name is required. Please insert a valid Name.");
             Name = name;
             Industry = industry;
             City = city;
-            Status = status;
         }
 
 

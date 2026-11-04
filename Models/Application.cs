@@ -5,9 +5,9 @@ using System.Xml;
 
 namespace JobApplicationTracker.Models
 {
-    internal class Application
+    internal class Application : IEntity
     {
-        public UniqueId id = new UniqueId();
+        public int Id { get; set; }
         public int JobId { get; set; }
         public int CandidateId { get; set; }
         public DateTime AppliedTime { get; set; } = DateTime.Now;
