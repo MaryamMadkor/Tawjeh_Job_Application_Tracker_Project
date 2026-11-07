@@ -16,11 +16,11 @@ namespace JobApplicationTracker.Models
         public double Salary { get; set; }
         public string Location { get; set; } = "Not Specified.";
         public bool IsOpen { get; set; } = true;
-        public DateTime PostedDate { get; set; }
+        public DateTime PostedDate { get; set; } = DateTime.Now;
         public int CompanyId { get; set; }
         public int RecruiterId { get; set; }
 
-        public Job(string title, string description, double salary, string location, bool isOpen, DateTime postedDate, int companyId, int recruiterId)
+        public Job(string title, string description, double salary, string location, int companyId, int recruiterId)
         {
             if (title == null) throw new ArgumentNullException("Title is Requied. Please insert a valid Title.");
             if (salary <= 0) throw new ArgumentException("Salary must be above threshold.");
@@ -28,8 +28,6 @@ namespace JobApplicationTracker.Models
             Description = description;
             Location = location;
             Salary = salary;
-            IsOpen = isOpen;
-            PostedDate = postedDate;
             CompanyId = companyId;
             RecruiterId = recruiterId;
         }

@@ -18,8 +18,6 @@ namespace JobApplicationTracker.Models
 
         public Candidate(string fullName, string email, string phone, int yearsOfExperience)
         {
-            if (fullName == null) throw new ArgumentNullException("Name is required. Please insert a valid full name.");
-            if (yearsOfExperience < 0) throw new ArgumentException("Years of Experience is not a valid number.");
             Email = email;
             FullName = fullName;
             Email = email;

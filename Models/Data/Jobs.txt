@@ -1,0 +1,6 @@
+1|Backend Developer|C# and .NET|12000|Cairo|True|2026-11-07T19:53:37.8584662+02:00|1|1
+2|Frontend Developer|React|10000|Cairo|True|2026-11-07T19:53:37.8611181+02:00|1|1
+3|Accountant|Finance reporting|9000|Giza|True|2026-11-07T19:53:37.8611230+02:00|2|2
+4|Risk Analyst|Market risk|11000|Giza|True|2026-11-07T19:53:37.8611235+02:00|2|2
+5|DevOps Engineer|CI/CD|14000|Remote|True|2026-11-07T19:53:37.8611258+02:00|1|1
+6|Data Analyst|SQL and Excel|8000|Cairo|True|2026-11-07T19:53:37.8611261+02:00|1|1

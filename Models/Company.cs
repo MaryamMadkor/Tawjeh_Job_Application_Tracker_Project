@@ -16,7 +16,6 @@ namespace JobApplicationTracker.Models
 
         public Company(string name, string industry, string city)
         {
-            if(name  == null) throw new ArgumentNullException("Name is required. Please insert a valid Name.");
             Name = name;
             Industry = industry;
             City = city;

@@ -12,6 +12,33 @@ namespace JobApplicationTracker.Services
         public static DataStore<Candidate> candidateList = new();
         public static HashSet<string> candidatesEmail = new(StringComparer.OrdinalIgnoreCase);
 
+
+        private static string Serialize(Candidate c) =>
+                $"{c.Id}|{c.FullName}|{c.Email}|{c.Phone}|{c.YearsOfExperience}";
+
+        private static Candidate Deserialize(string line)
+        {
+            var p = line.Split('|');
+            var cand = new Candidate
+            (
+                p[1],
+                p[2],
+                p[3],
+                int.Parse(p[4])
+            )
+            {
+                Id = int.Parse(p[0])
+            };
+            return cand;
+        }
+
+        public void SaveAll() =>
+            candidateList.SaveToFile(Constants.CandidateFilePath, Serialize);
+
+        public void LoadAll() =>
+            candidateList.LoadFromFile(Constants.CandidateFilePath, Deserialize);
+
+
         public Constants.TriggerAlert Add(string fullName, string email, string phoneNumber, int yearsOfExp) 
         {
             if (string.IsNullOrWhiteSpace(fullName) ||
@@ -19,16 +46,16 @@ namespace JobApplicationTracker.Services
                 string.IsNullOrWhiteSpace(phoneNumber) ||
                 yearsOfExp < 0)
                 return new Constants.TriggerAlert(false, "Invalid input.");
-            if (!Regex.IsMatch(Constants.emailPattern, email)) return new Constants.TriggerAlert(false, "Not a valid Email.");
+            if (!Regex.IsMatch(email, Constants.emailPattern)) return new Constants.TriggerAlert(false, "Not a valid Email.");
             if (candidatesEmail.Contains(email)) return new Constants.TriggerAlert(false, "This email already exist. A unique email is required.");
 
-            Candidate candidate = new Candidate(fullName, email, phoneNumber, yearsOfExp);
+            var candidate = new Candidate(fullName, email, phoneNumber, yearsOfExp);
             candidateList.Add(candidate);
             candidatesEmail.Add(email);
             return new Constants.TriggerAlert(true, "Added Successfully.");
         }
 
-        public Constants.TriggerAlert UpdateDataById(int id, string? name, string? email, string? phone, int? yearsOfExp)
+        public Constants.TriggerAlert UpdateById(int id, string? name, string? email, string? phone, int? yearsOfExp)
         {
             if (id <= 0) return new Constants.TriggerAlert(false, "not a valid id.");
             var cand = candidateList.ReadById(id);
@@ -41,7 +68,7 @@ namespace JobApplicationTracker.Services
             }
             else if (email != cand.Email)
             {
-                if (!Regex.IsMatch(Constants.emailPattern, email))
+                if (!Regex.IsMatch(email, Constants.emailPattern))
                     return new Constants.TriggerAlert(false, "Not a valid email format.");
                 
                 if (candidatesEmail.Contains(email))

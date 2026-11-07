@@ -18,14 +18,8 @@ namespace JobApplicationTracker.Models
 
         public Recruiter(string name, string email, int companyId)
         {
-            if(name == null) throw new ArgumentNullException("Recruiter name is required. Please insert a valid name.");
             Name = name;
-            if(Regex.IsMatch(Constants.emailPattern, email))
             Email = email;
-            else
-            {
-                throw new ArgumentException("The Email Provided Is Not In a Valid Email Format: ", nameof(Email));
-            }
             CompanyId = companyId;
         }
     }

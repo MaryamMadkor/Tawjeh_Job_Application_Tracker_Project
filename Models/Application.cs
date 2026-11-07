@@ -11,14 +11,12 @@ namespace JobApplicationTracker.Models
         public int JobId { get; set; }
         public int CandidateId { get; set; }
         public DateTime AppliedTime { get; set; } = DateTime.Now;
-        public ApplicationStatus applictionStatus { get; set; }
+        public ApplicationStatus applictionStatus { get; set; } = ApplicationStatus.Submitted;
 
-        public Application(int jobId, int candidateId, DateTime appliedTime, ApplicationStatus applictionStatus)
+        public Application(int jobId, int candidateId)
         {
             JobId = jobId;
             CandidateId = candidateId;
-            AppliedTime = appliedTime;
-            this.applictionStatus = applictionStatus;
         }
     }
 }
